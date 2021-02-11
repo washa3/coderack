@@ -1,0 +1,14 @@
+version: "3.8"
+
+services: 
+  coderack: 
+    build: 
+      context: . 
+      dockerfile: Dockerfile
+    working_dir: /coderack 
+    volumes: 
+      - ./:/coderack
+    environment: 
+      DISPLAY: ${WSLDISPLAY}:0.0 #can describe Environment variable to update this
+    stdin_open: true #docker run -i
+    tty: true #docker run -t
